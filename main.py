@@ -40,14 +40,11 @@ while cap.isOpened():
     img = cv2.flip(img, 1)
 
     img_input = cv2.resize(img, size)
-    # print('max', np.max(img_input[0]))
-    # print('min', np.min(img_input[0]))
     
     img_input = cv2.cvtColor(img_input, cv2.COLOR_BGR2RGB)
     img_input = (img_input.astype(np.float32) / 127.0) - 1
-    # print('max', np.max(img_input[0]))
-    # print('min', np.min(img_input[0]))
-    
+    print('max', np.max(img_input[0]))  # -1.0 ~ 1.0
+    print('min', np.min(img_input[0]))
     
     img_input = np.expand_dims(img_input, axis=0)
     # print('img_input : ', img_input.shape)
